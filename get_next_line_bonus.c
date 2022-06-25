@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgwin <tgwin@student.21-school.ru>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/24 23:57:10 by tgwin             #+#    #+#             */
+/*   Updated: 2022/06/24 23:57:10 by tgwin            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line_bonus.h"
 
 char	*ft_get_line(char *save)
@@ -83,7 +95,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*save[1025];
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 1024)
 		return (0);
 	save[fd] = ft_read_and_save(fd, save[fd]);
 	if (!save[fd])
